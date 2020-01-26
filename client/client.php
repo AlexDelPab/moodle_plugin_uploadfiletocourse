@@ -6,21 +6,13 @@
 //
 
 /**
- * XMLRPC client for Moodle 2 - local_wstemplate
+ * cURL client for Moodle 3 - local_uploadfiletocourse
  *
  * This script does not depend of any Moodle code,
  * and it can be called from a browser.
  *
- * @authorr Jerome Mouneyrac
+ * @author Alexander Pabinger
  */
-
-/// MOODLE ADMINISTRATION SETUP STEPS
-// 1- Install the plugin
-// 2- Enable web service advance feature (Admin > Advanced features)
-// 3- Enable XMLRPC protocol (Admin > Plugins > Web services > Manage protocols)
-// 4- Create a token for a specific user and for the service 'My service' (Admin > Plugins > Web services > Manage tokens)
-// 5- Run this script directly from your browser: you should see 'Hello, FIRSTNAME'
-
 
 $token = '9e4296d873a9a29ab7e2cb928f682e11';
 $function = 'custom_upload_file_to_course';
@@ -37,7 +29,7 @@ curl_setopt_array($curl, array(
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => array('courseid' => '4','filename' => 'Einkommenserklärung.pdf','repo_upload_file'=> new CURLFILE('/media/alex/721CF6BD1CF67C03/Users/Alex/Documents/Einkommenerklärung_Pabinger.pdf')),
+    CURLOPT_POSTFIELDS => array('courseid' => '4','filename' => 'Test.pdf','repo_upload_file'=> new CURLFILE('/media/alex/721CF6BD1CF67C03/Users/Alex/Documents/Einkommenerklärung_Pabinger.pdf')),
     CURLOPT_HTTPHEADER => array(
         "Content-Type: multipart/form-data;"
     ),
