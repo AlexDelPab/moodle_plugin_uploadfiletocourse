@@ -12,6 +12,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+$plugin->component = 'local_uploadfiletocourseplugin';
 $plugin->version  = 2019123001;   // The (date) version of this module + 2 extra digital for daily versions
                                   // This version number is displayed into /admin/forms.php
                                   // TODO: if ever this plugin get branched, the old branch number
@@ -19,7 +20,6 @@ $plugin->version  = 2019123001;   // The (date) version of this module + 2 extra
                                   // need then a $plugin->release human friendly date. For the moment, we use
                                   // display this version number with userdate (dev friendly)
 $plugin->requires = 2019052000;  // Requires this Moodle version - at least 2.0
-$plugin->component = 'local_uploadfiletocourseplugin';
 $plugin->cron     = 0;
 $plugin->release = '1.0 (Build: 2019123001)';
 $plugin->maturity = MATURITY_STABLE;
